@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Adicionar Novo Endereço de Reciclagem</h2>
+    <form method="post" action="/add/">
+      {% csrf_token %}
+      <div class="mb-3">
+  <label for="name" class="form-label">Nome da Organização</label>
+  <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telefone</label>
+        <input type="text" class="form-control" id="phone" name="phone" required>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="address" name="address" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Adicionar Endereço</button>
+  </form>
+{% endblock %}
